@@ -1,24 +1,78 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
+import { SplashScreen, Stack } from 'expo-router';
+
 import { StatusBar } from 'expo-status-bar';
+
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+
+import { ScrollView } from 'react-native';
+
+import { ThemedView } from '@/components/themed-view';
+
+import Header from '@/components/header';
+
+import Footer from '@/components/footer';
+
 import 'react-native-reanimated';
 
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { useEffect, useState } from 'react';
 
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+import { initI18n } from '@/i18n';
+
+import '../global.css';
+
+SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const prepare = async () => {
+      try {
+        // Initialize translations before rendering
+        await initI18n();
+      } catch (e) {
+        console.warn('i18n init failed:', e);
+      } finally {
+        setReady(true);
+        // Hide splash after initialization
+        await SplashScreen.hideAsync();
+      }
+    };
+
+    prepare();
+  }, []);
+
+  if (!ready) return null;
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <SafeAreaProvider>
+      <ThemedView className='bg-background flex-1'>
+        <StatusBar style='light' />
+
+        <SafeAreaView className='flex-1'>
+          {/* Fixed Header */}
+          <Header />
+
+          {/* Scrollable content */}
+          <ScrollView
+            className='bg-background flex-1'
+            contentContainerClassName='flex-grow'
+            showsVerticalScrollIndicator={false}
+          >
+            <Stack
+              screenOptions={{
+                headerShown: false,
+                contentStyle: {
+                  backgroundColor: '#111',
+                },
+              }}
+            />
+          </ScrollView>
+
+          {/* Fixed Footer */}
+          <Footer />
+        </SafeAreaView>
+      </ThemedView>
+    </SafeAreaProvider>
   );
 }
