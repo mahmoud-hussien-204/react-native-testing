@@ -17,12 +17,12 @@ import { useEffect, useState } from 'react';
 import { initI18n } from '@/i18n';
 
 import {
-  IBMPlexSans_400Regular,
-  IBMPlexSans_500Medium,
-  IBMPlexSans_600SemiBold,
-  IBMPlexSans_700Bold,
+  Cairo_400Regular,
+  Cairo_500Medium,
+  Cairo_600SemiBold,
+  Cairo_700Bold,
   useFonts,
-} from '@expo-google-fonts/ibm-plex-sans';
+} from '@expo-google-fonts/cairo';
 
 import 'react-native-reanimated';
 
@@ -34,10 +34,10 @@ export default function RootLayout() {
   const [i18nReady, setI18nReady] = useState(false);
 
   const [fontsLoaded] = useFonts({
-    IBMPlexSans_400Regular,
-    IBMPlexSans_500Medium,
-    IBMPlexSans_600SemiBold,
-    IBMPlexSans_700Bold,
+    Cairo_400Regular,
+    Cairo_500Medium,
+    Cairo_600SemiBold,
+    Cairo_700Bold,
   });
 
   useEffect(() => {

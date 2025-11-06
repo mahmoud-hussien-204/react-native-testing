@@ -10,9 +10,10 @@ module.exports = {
         text: '#ffffff',
         primary: '#b50d6e', // your chosen color
         'background-secondary': '#272528',
+        'text-secondary': '#d1d5db',
       },
       fontFamily: {
-        ibm: ['IBMPlexSans_400Regular'],
+        arFont: ['Cairo_400Regular'],
       },
     },
   },

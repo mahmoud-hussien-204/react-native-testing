@@ -29,7 +29,7 @@ const Footer = () => {
             activeOpacity={0.8}
             // @ts-ignore
             onPress={() => router.push(tab.name === 'home' ? '/' : `/${tab.name}`)}
-            className='relative items-center justify-end gap-3'
+            className='relative items-center justify-end gap-3 text-center'
           >
             {/* Icon container */}
             <View
@@ -47,7 +47,9 @@ const Footer = () => {
             </View>
 
             {/* Label */}
-            <ThemedText className={`${isActive ? 'font-medium text-white' : '!text-gray-400'}`}>
+            <ThemedText
+              className={`text-center ${isActive ? 'font-medium text-white' : '!text-gray-400'}`}
+            >
               {t(tab.title)}
             </ThemedText>
           </TouchableOpacity>

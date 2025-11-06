@@ -14,8 +14,6 @@ import { ThemedText } from '../themed-text';
 
 import { ThemedView } from '../themed-view';
 
-import { Image } from 'expo-image';
-
 const SubscriptionsSection = () => {
   const { t } = useTranslation();
   return (
@@ -28,16 +26,16 @@ const SubscriptionsSection = () => {
             activeOpacity={0.7}
             className='flex-1'
           >
-            <CardContainer className='flex-row gap-4'>
+            <CardContainer className='flex-row items-center gap-4'>
               <ThemedText className='flex-1 !text-lg font-bold'>
                 {t('home.subscribe_limit')}
               </ThemedText>
-              <ThemedView className='h-5 flex-1'>
-                <Image
-                  source={require('@/assets/images/icon.png')}
-                  contentFit='cover'
-                  className='size-12'
-                />
+              <ThemedView className='flex-1'>
+                {/* <Image
+                  source={require('@/assets/images/react-logo.png')}
+                  contentFit='contain'
+                  style={{ height: 70 }}
+                /> */}
               </ThemedView>
             </CardContainer>
           </TouchableOpacity>

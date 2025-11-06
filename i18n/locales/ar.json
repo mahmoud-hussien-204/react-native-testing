@@ -1,4 +1,7 @@
 {
+  "global": {
+    "branches": "الفروع"
+  },
   "nav": {
     "subscriptions": "الاشتراكات",
     "home": "الرئيسية",

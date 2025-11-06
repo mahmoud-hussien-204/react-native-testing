@@ -6,7 +6,7 @@ interface ICardContainerProps extends Required<React.PropsWithChildren> {
 
 export const CardContainer = ({ children, className }: ICardContainerProps) => {
   return (
-    <ThemedView className={`rounded-2xl bg-background-secondary p-4 ${className}`}>
+    <ThemedView className={`overflow-hidden rounded-2xl bg-background-secondary p-4 ${className}`}>
       {children}
     </ThemedView>
   );

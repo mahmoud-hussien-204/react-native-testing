@@ -1,3 +1,5 @@
+import BranchesSection from '@/components/home/BranchesSection';
+
 import SubscriptionsSection from '@/components/home/SubscriptionsSection';
 
 import WhatDoYouWantTodaySection from '@/components/home/WhatDoYouWantTodaySection';
@@ -9,6 +11,7 @@ const HomePage = () => {
     <ThemedView>
       <WhatDoYouWantTodaySection />
       <SubscriptionsSection />
+      <BranchesSection />
     </ThemedView>
   );
 };
