@@ -12,41 +12,53 @@ import Header from '@/components/header';
 
 import Footer from '@/components/footer';
 
-import 'react-native-reanimated';
-
 import { useEffect, useState } from 'react';
 
 import { initI18n } from '@/i18n';
+
+import {
+  IBMPlexSans_400Regular,
+  IBMPlexSans_500Medium,
+  IBMPlexSans_600SemiBold,
+  IBMPlexSans_700Bold,
+  useFonts,
+} from '@expo-google-fonts/ibm-plex-sans';
+
+import 'react-native-reanimated';
 
 import '../global.css';
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [ready, setReady] = useState(false);
+  const [i18nReady, setI18nReady] = useState(false);
+
+  const [fontsLoaded] = useFonts({
+    IBMPlexSans_400Regular,
+    IBMPlexSans_500Medium,
+    IBMPlexSans_600SemiBold,
+    IBMPlexSans_700Bold,
+  });
 
   useEffect(() => {
     const prepare = async () => {
-      try {
-        // Initialize translations before rendering
-        await initI18n();
-      } catch (e) {
-        console.warn('i18n init failed:', e);
-      } finally {
-        setReady(true);
-        // Hide splash after initialization
-        await SplashScreen.hideAsync();
-      }
+      await initI18n();
+      setI18nReady(true);
     };
-
     prepare();
   }, []);
 
-  if (!ready) return null;
+  useEffect(() => {
+    if (fontsLoaded && i18nReady) {
+      SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded, i18nReady]);
+
+  if (!fontsLoaded || !i18nReady) return null;
 
   return (
     <SafeAreaProvider>
-      <ThemedView className='bg-background flex-1'>
+      <ThemedView className='flex-1 bg-background'>
         <StatusBar style='light' />
 
         <SafeAreaView className='flex-1'>
@@ -55,7 +67,7 @@ export default function RootLayout() {
 
           {/* Scrollable content */}
           <ScrollView
-            className='bg-background flex-1'
+            className='flex-1 bg-background'
             contentContainerClassName='flex-grow'
             showsVerticalScrollIndicator={false}
           >
@@ -63,7 +75,7 @@ export default function RootLayout() {
               screenOptions={{
                 headerShown: false,
                 contentStyle: {
-                  backgroundColor: '#111',
+                  backgroundColor: '#000',
                 },
               }}
             />

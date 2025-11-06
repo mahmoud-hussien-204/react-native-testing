@@ -1,9 +1,16 @@
-import { ThemedText } from '@/components/themed-text';
+import SubscriptionsSection from '@/components/home/SubscriptionsSection';
 
-import React from 'react';
+import WhatDoYouWantTodaySection from '@/components/home/WhatDoYouWantTodaySection';
+
+import { ThemedView } from '@/components/themed-view';
 
 const HomePage = () => {
-  return <ThemedText>hello from home</ThemedText>;
+  return (
+    <ThemedView>
+      <WhatDoYouWantTodaySection />
+      <SubscriptionsSection />
+    </ThemedView>
+  );
 };
 
 export default HomePage;

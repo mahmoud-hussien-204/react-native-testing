@@ -6,10 +6,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: '#111',
+        background: '#000',
         text: '#ffffff',
         primary: '#b50d6e', // your chosen color
         'background-secondary': '#272528',
+      },
+      fontFamily: {
+        ibm: ['IBMPlexSans_400Regular'],
       },
     },
   },

@@ -1,3 +1,14 @@
 {
-  "home": "مرحبا"
+  "nav": {
+    "subscriptions": "الاشتراكات",
+    "home": "الرئيسية",
+    "profile": "الملف الشخصي"
+  },
+  "home": {
+    "what_do_you_want_to_do_today": "ماذا تريد ان تفعل اليوم ؟",
+    "take_an_appointment": "احجز موعدا",
+    "shop_our_products": "تسوق منتجاتنا",
+    "subscriptions_and_wallats": "الاشتراكات والولاد",
+    "subscribe_limit": "اشترك مقابل عدد لا محدود من الحلاقات المجانية"
+  }
 }
