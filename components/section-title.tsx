@@ -22,8 +22,8 @@ const SectionTitle = ({ title, sellAllUrl }: IProps) => {
 
   return (
     <ThemedView className='mb-4 flex-row items-center justify-between'>
-      <ThemedText className='text-text-secondary'>{title}</ThemedText>;
-      {sellAllUrl && (
+      {title ? <ThemedText className='text-text-secondary'>{title}</ThemedText> : null}
+      {sellAllUrl ? (
         <TouchableOpacity
           className='flex-row items-center gap-2'
           onPress={() => router.push(sellAllUrl)}
@@ -35,7 +35,7 @@ const SectionTitle = ({ title, sellAllUrl }: IProps) => {
             className='!text-text-secondary'
           />
         </TouchableOpacity>
-      )}
+      ) : null}
     </ThemedView>
   );
 };

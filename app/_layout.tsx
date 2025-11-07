@@ -8,8 +8,6 @@ import { View } from 'react-native';
 
 import { ThemedView } from '@/components/themed-view';
 
-import Footer from '@/components/footer';
-
 import { useEffect, useState } from 'react';
 
 import { initI18n } from '@/i18n';
@@ -23,6 +21,8 @@ import {
 } from '@expo-google-fonts/cairo';
 
 import 'react-native-reanimated';
+
+import Footer from '@/components/footer';
 
 import '../global.css';
 
@@ -65,19 +65,15 @@ export default function RootLayout() {
             <Stack
               screenOptions={{
                 headerShown: false,
-                contentStyle: {
-                  backgroundColor: '#000',
-                },
+                contentStyle: { backgroundColor: '#000' },
               }}
             />
-
-            {/* Fixed Footer */}
             <Footer />
           </SafeAreaView>
         </ThemedView>
       </SafeAreaProvider>
       {/* this view for render colors which get it dynamically */}
-      <View className='hidden text-gray-500 text-green-500 text-red-500 text-yellow-500'></View>
+      <View className='hidden !text-gray-500 !text-green-500 !text-red-500 !text-yellow-500'></View>
     </>
   );
 }

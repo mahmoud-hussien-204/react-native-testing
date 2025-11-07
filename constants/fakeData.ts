@@ -2,9 +2,9 @@ export const fakeData_branches: IBranch[] = [
   {
     id: '1',
     status: 'open',
-    name: 'Downtown Branch',
-    description: 'Modern workshop located in the heart of the city.',
-    address: '123 Main St, Downtown',
+    name: 'فرع داون تاون',
+    description: 'ورشة عمل حديثة تقع في قلب المدينة.',
+    address: '123 الشارع الرئيسى, الرياض',
     phone: '+201001234567',
     locationUrl: 'https://maps.google.com/?q=123+Main+St',
     cover:
@@ -58,5 +58,78 @@ export const fakeData_videos = [
     cover:
       'https://images.fresha.com/locations/location-profile-images/2590503/4768360/35efb127-7c50-459a-b5f3-86e3e3cabd7a-MarkazAlFunoon-SA-RiyadhProvince-Riyadh-Fresha.jpg?class=venue-gallery-small',
     url: 'https://www.youtube.com/watch?v=9bZkp7q19f0',
+  },
+];
+
+export const fakeData_memberships: IMemberShip[] = [
+  {
+    id: '1',
+    imageUrl: 'https://commabarber.com/_next/image?url=%2Fplans%2Fme.png&w=640&q=75',
+    linkUrl: 'https://commabarber.com/plans/me',
+  },
+  {
+    id: '2',
+    imageUrl: 'https://commabarber.com/_next/image?url=%2Fplans%2Fbr.png&w=640&q=75',
+    linkUrl: 'https://commabarber.com/plans/br',
+  },
+  {
+    id: '3',
+    imageUrl: 'https://commabarber.com/_next/image?url=%2Fplans%2Fsi.png&w=640&q=75',
+    linkUrl: 'https://commabarber.com/plans/si',
+  },
+  {
+    id: '4',
+    imageUrl: 'https://commabarber.com/_next/image?url=%2Fplans%2Fgo.png&w=640&q=75',
+    linkUrl: 'https://commabarber.com/plans/go',
+  },
+];
+
+export const fakeData_products: IProduct[] = [
+  {
+    id: '1',
+    title: 'Beard Oil',
+    price: '120 EGP',
+    imageUrl:
+      'https://commabarber.com/_next/image?url=%2Fimages%2Fproducts%2Fbeard-oil.png&w=640&q=75',
+    linkUrl: 'https://commabarber.com/products/beard-oil',
+  },
+  {
+    id: '2',
+    title: 'Hair Wax',
+    price: '150 EGP',
+    imageUrl:
+      'https://commabarber.com/_next/image?url=%2Fimages%2Fproducts%2Fhair-wax.png&w=640&q=75',
+    linkUrl: 'https://commabarber.com/products/hair-wax',
+  },
+  {
+    id: '3',
+    title: 'Shampoo',
+    price: '200 EGP',
+    imageUrl:
+      'https://commabarber.com/_next/image?url=%2Fimages%2Fproducts%2Fshampoo.png&w=640&q=75',
+    linkUrl: 'https://commabarber.com/products/shampoo',
+  },
+  {
+    id: '4',
+    title: 'Comb',
+    price: '90 EGP',
+    imageUrl: 'https://commabarber.com/_next/image?url=%2Fimages%2Fproducts%2Fcomb.png&w=640&q=75',
+    linkUrl: 'https://commabarber.com/products/comb',
+  },
+  {
+    id: '5',
+    title: 'After Shave',
+    price: '180 EGP',
+    imageUrl:
+      'https://commabarber.com/_next/image?url=%2Fimages%2Fproducts%2Fafter-shave.png&w=640&q=75',
+    linkUrl: 'https://commabarber.com/products/after-shave',
+  },
+  {
+    id: '6',
+    title: 'Hair Brush',
+    price: '130 EGP',
+    imageUrl:
+      'https://commabarber.com/_next/image?url=%2Fimages%2Fproducts%2Fhair-brush.png&w=640&q=75',
+    linkUrl: 'https://commabarber.com/products/hair-brush',
   },
 ];

@@ -33,10 +33,32 @@ const Footer = () => {
           >
             {/* Icon container */}
             <View
-              className={`${isActive ? 'absolute bottom-0 flex -translate-y-8 rounded-full bg-background p-3' : ''}`}
+              style={{
+                ...(isActive
+                  ? {
+                      backgroundColor: '#000',
+                      borderRadius: '50%',
+                      padding: 12,
+                      position: 'absolute',
+                      bottom: 0,
+                      transform: 'translateY(-32px)',
+                    }
+                  : {}),
+              }}
             >
               <View
-                className={`${isActive ? 'size-16 items-center justify-center rounded-full bg-white' : ''}`}
+                style={{
+                  ...(isActive
+                    ? {
+                        backgroundColor: '#fff',
+                        borderRadius: '50%',
+                        width: 64,
+                        height: 64,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }
+                    : {}),
+                }}
               >
                 <Ionicons
                   name={tab.icon as any}
@@ -48,7 +70,16 @@ const Footer = () => {
 
             {/* Label */}
             <ThemedText
-              className={`text-center ${isActive ? 'font-medium text-white' : '!text-gray-400'}`}
+              style={{
+                ...(isActive
+                  ? {
+                      color: '#fff',
+                      fontWeight: 500,
+                    }
+                  : {
+                      color: '#9ca3af',
+                    }),
+              }}
             >
               {t(tab.title)}
             </ThemedText>

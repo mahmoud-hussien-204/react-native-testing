@@ -18,3 +18,17 @@ interface IVideo {
   cover: string;
   url: string;
 }
+
+interface IMemberShip {
+  id: string;
+  imageUrl: string;
+  linkUrl: string;
+}
+
+interface IProduct {
+  id: string;
+  title: string;
+  price: string;
+  imageUrl: string;
+  linkUrl: string;
+}
