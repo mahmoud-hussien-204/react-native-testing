@@ -10,7 +10,15 @@ import { Entypo } from '@expo/vector-icons';
 
 import { CardContainer } from './card';
 
+import { getStatusColor } from '@/utils';
+
+import { useTranslation } from 'react-i18next';
+
 import { ThemedView } from './themed-view';
+
+import { useState } from 'react';
+
+import Skeleton from './skeleton';
 
 type Props = {
   item: IBranch;
@@ -18,6 +26,8 @@ type Props = {
 };
 
 export default function BranchCard({ item, onPress }: Props) {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
   const handlePress = () => {
     if (onPress) onPress(item.id);
     else router.push(`/branches/${item.id}`);
@@ -25,19 +35,22 @@ export default function BranchCard({ item, onPress }: Props) {
 
   return (
     <TouchableOpacity activeOpacity={0.8} onPress={handlePress}>
-      <CardContainer className='w-72 !px-0 pt-0'>
+      <CardContainer className='w-72 !px-0 !py-0'>
+        {!imageLoaded && <Skeleton className='h-[130px] w-full' />}
+
         <Image
           source={item.cover}
           contentFit='cover'
           contentPosition='center'
           style={{ height: 130 }}
+          onLoadEnd={() => setImageLoaded(true)}
         />
 
         <ThemedView className='p-4'>
           <ThemedText className='mb-2 font-semibold'>{item.name}</ThemedText>
           <View className='mb-1 flex-row items-center gap-1'>
             <Entypo name='location-pin' size={15} className='!text-primary' />
-            <ThemedText className='text-text-secondary mb-1 font-semibold'>
+            <ThemedText className='mb-1 font-semibold text-text-secondary'>
               {item.address}
             </ThemedText>
           </View>
@@ -51,7 +64,7 @@ export default function BranchCard({ item, onPress }: Props) {
   );
 }
 
-export const BranchCardPhone = ({ phone }: { phone: string }) => (
+export const BranchCardPhone = ({ phone }: Pick<IBranch, 'phone'>) => (
   <TouchableOpacity
     onPress={() => Linking.openURL(`tel:${phone}`)}
     activeOpacity={0.7}
@@ -62,6 +75,11 @@ export const BranchCardPhone = ({ phone }: { phone: string }) => (
   </TouchableOpacity>
 );
 
-export const BranchCardStatus = ({ status }: { status: string }) => (
-  <ThemedText>{status}</ThemedText>
-);
+export const BranchCardStatus = ({ status }: Pick<IBranch, 'status'>) => {
+  const { t } = useTranslation();
+  const statusColor = getStatusColor(status);
+
+  return (
+    <ThemedText className={`font-semibold ${statusColor}`}>{t(`status.${status}`)}</ThemedText>
+  );
+};

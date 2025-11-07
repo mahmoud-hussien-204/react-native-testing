@@ -10,7 +10,7 @@ import { router } from 'expo-router';
 
 const Header = () => {
   return (
-    <ThemedView className='flex-row-reverse items-center gap-4 px-4 py-4'>
+    <ThemedView className='flex-row-reverse items-center gap-4 p-4'>
       <TouchableOpacity onPress={() => router.push('/notifications')} activeOpacity={0.7}>
         <AntDesign name='bell' size={20} color='#fff' />
       </TouchableOpacity>

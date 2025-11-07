@@ -4,11 +4,9 @@ import { StatusBar } from 'expo-status-bar';
 
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
-import { ScrollView } from 'react-native';
+import { View } from 'react-native';
 
 import { ThemedView } from '@/components/themed-view';
-
-import Header from '@/components/header';
 
 import Footer from '@/components/footer';
 
@@ -57,20 +55,13 @@ export default function RootLayout() {
   if (!fontsLoaded || !i18nReady) return null;
 
   return (
-    <SafeAreaProvider>
-      <ThemedView className='flex-1 bg-background'>
-        <StatusBar style='light' />
+    <>
+      <SafeAreaProvider>
+        <ThemedView className='flex-1 bg-background'>
+          <StatusBar style='light' />
 
-        <SafeAreaView className='flex-1'>
-          {/* Fixed Header */}
-          <Header />
-
-          {/* Scrollable content */}
-          <ScrollView
-            className='flex-1 bg-background'
-            contentContainerClassName='flex-grow'
-            showsVerticalScrollIndicator={false}
-          >
+          <SafeAreaView className='flex-1'>
+            {/* Scrollable content */}
             <Stack
               screenOptions={{
                 headerShown: false,
@@ -79,12 +70,14 @@ export default function RootLayout() {
                 },
               }}
             />
-          </ScrollView>
 
-          {/* Fixed Footer */}
-          <Footer />
-        </SafeAreaView>
-      </ThemedView>
-    </SafeAreaProvider>
+            {/* Fixed Footer */}
+            <Footer />
+          </SafeAreaView>
+        </ThemedView>
+      </SafeAreaProvider>
+      {/* this view for render colors which get it dynamically */}
+      <View className='hidden text-gray-500 text-green-500 text-red-500 text-yellow-500'></View>
+    </>
   );
 }

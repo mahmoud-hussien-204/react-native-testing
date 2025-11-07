@@ -1,11 +1,22 @@
 {
   "global": {
-    "branches": "الفروع"
+    "branches": "الفروع",
+    "advices": "النصائح",
+    "see_all": "المزيد"
+  },
+  "status": {
+    "open": "مفتوح",
+    "closed": "مغلق",
+    "soon": "قريباً"
   },
   "nav": {
     "subscriptions": "الاشتراكات",
     "home": "الرئيسية",
     "profile": "الملف الشخصي"
+  },
+  "notifications": {
+    "title": "الإشعارات",
+    "empty": "ليس لديك أي إشعارات حتى الآن!"
   },
   "home": {
     "what_do_you_want_to_do_today": "ماذا تريد ان تفعل اليوم ؟",
@@ -13,5 +24,8 @@
     "shop_our_products": "تسوق منتجاتنا",
     "subscriptions_and_wallats": "الاشتراكات والولاد",
     "subscribe_limit": "اشترك مقابل عدد لا محدود من الحلاقات المجانية"
+  },
+  "branches": {
+    "title": "الفروع"
   }
 }

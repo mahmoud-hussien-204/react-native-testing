@@ -4,29 +4,29 @@ import SectionTitle from '@/components/section-title';
 
 import { ThemedView } from '@/components/themed-view';
 
-import { fakeData_branches } from '@/constants/fakeData';
+import { fakeData_videos } from '@/constants/fakeData';
 
 import { useTranslation } from 'react-i18next';
 
 import { FlatList, View } from 'react-native';
 
-import BranchCard from '../branch-card';
+import VideoCard from '../video-card';
 
-export default function BranchesSection() {
+export default function VideosSection() {
   const { t } = useTranslation();
 
   return (
     <ThemedView className='mt-8'>
       <Container>
-        <SectionTitle title={t('global.branches')} sellAllUrl='/branches' />
+        <SectionTitle title={t('global.advices')} />
         <ThemedView>
           <FlatList
-            data={fakeData_branches}
+            data={fakeData_videos}
             horizontal
             keyExtractor={(item) => item.id}
             showsHorizontalScrollIndicator={false}
             ItemSeparatorComponent={() => <View className='w-4' />}
-            renderItem={({ item }) => <BranchCard item={item} />}
+            renderItem={({ item }) => <VideoCard item={item} />}
           />
         </ThemedView>
       </Container>

@@ -1,3 +1,5 @@
+type IBranchStatus = 'open' | 'closed' | 'soon';
+
 interface IBranch {
   id: string;
   name: string;
@@ -6,5 +8,13 @@ interface IBranch {
   phone: string;
   locationUrl: string;
   cover: string;
-  status: string;
+  status: IBranchStatus;
+}
+
+interface IVideo {
+  id: string;
+  title: string;
+  description: string;
+  cover: string;
+  url: string;
 }
