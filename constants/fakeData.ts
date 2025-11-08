@@ -133,3 +133,56 @@ export const fakeData_products: IProduct[] = [
     linkUrl: 'https://commabarber.com/products/hair-brush',
   },
 ];
+
+export const fakeData_faq = [
+  {
+    id: 1,
+    question: 'How can I book an appointment?',
+    answer: 'You can book directly from the app in the “Appointments” section.',
+  },
+  {
+    id: 2,
+    question: 'Where are your branches located?',
+    answer: 'All branches are listed in the “Branches” section on the Home screen.',
+  },
+  {
+    id: 3,
+    question: 'How can I contact support?',
+    answer: 'You can reach us through the Help Center > Contact Us page.',
+  },
+  {
+    id: 4,
+    question: 'What payment methods are accepted?',
+    answer: 'We accept credit and debit cards, PayPal, and cash.',
+  },
+  {
+    id: 5,
+    question: 'How can I cancel or reschedule an appointment?',
+    answer: 'You can cancel or reschedule an appointment from the Appointments section.',
+  },
+  {
+    id: 6,
+    question: 'What is your cancellation policy?',
+    answer: 'We offer a 24-hour cancellation policy for appointments.',
+  },
+  {
+    id: 7,
+    question: 'What is your refund policy?',
+    answer: 'We offer a 24-hour refund policy for appointments.',
+  },
+  {
+    id: 8,
+    question: 'What is your privacy policy?',
+    answer: 'We take privacy seriously and have a Privacy Policy page.',
+  },
+  {
+    id: 9,
+    question: 'What is your return policy?',
+    answer: 'We offer a 24-hour return policy for appointments.',
+  },
+  {
+    id: 10,
+    question: 'What is your terms and conditions?',
+    answer: 'We have a Terms and Conditions page.',
+  },
+];

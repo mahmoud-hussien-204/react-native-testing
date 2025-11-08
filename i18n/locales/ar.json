@@ -2,7 +2,9 @@
   "global": {
     "branches": "الفروع",
     "advices": "النصائح",
-    "see_all": "المزيد"
+    "see_all": "المزيد",
+    "cancel": "إلغاء",
+    "submit": "إرسال"
   },
   "status": {
     "open": "مفتوح",
@@ -45,5 +47,34 @@
   "products": {
     "title": "المنتجات",
     "empty": "لا توجد منتجات حتى الآن!"
+  },
+  "settings": {
+    "profile": "الملف الشخصي",
+    "title": "الإعدادات",
+    "help_center": "مركز المساعدة",
+    "language": "اللغة",
+    "branches": "الفروع",
+    "rate_app": "قيّم التطبيق",
+    "share_with_friend": "مشاركة مع صديق",
+    "rate_header": "اكتب مراجعة",
+    "title_placeholder": "العنوان",
+    "review_placeholder": "اكتب رأيك...",
+    "nickname_placeholder": "الاسم المستعار",
+    "logout": "تسجيل الخروج",
+    "select_language": "اختر اللغة",
+    "submit": "استمرار"
+  },
+  "helper_center": {
+    "title": "مركز المساعدة",
+    "have_problem": "هل تواجه مشكلة؟",
+    "problem_in_app": "مشكلة في التطبيق",
+    "problem_in_store": "مشكلة في المتجر",
+    "faq_title": "الأسئلة الشائعة",
+    "faq_coming_soon": "نقوم بإعداد قسم الأسئلة الشائعة قريباً.",
+    "send_problem": "ارسل المشكلة",
+    "attach_image": "ارفق صورة",
+    "problem_label": "المشكلة",
+    "problem_in_app_text": "يرجى مشاركة المزيد من التفاصيل وسيقوم فريق الدعم لدينا بالرد عليك في أقرب وقت ممكن",
+    "problem_placeholder": "اكتب ملاحظاتك هنا..."
   }
 }
